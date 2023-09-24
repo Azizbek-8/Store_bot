@@ -3,7 +3,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.client.session.middlewares.request_logging import logger
 from loader import db
-from utils.misc.add_data import add_category_to_db
+from utils.misc.add_data import add_category_to_db, add_products_to_db
 
 
 def setup_handlers(dispatcher: Dispatcher) -> None:
@@ -57,7 +57,9 @@ async def aiogram_on_startup_polling(dispatcher: Dispatcher, bot: Bot) -> None:
 
     logger.info("Database connected")
     await database_connected()
-    add_category_to_db()
+
+    #add_category_to_db()
+    #add_products_to_db()
 
     logger.info("Database inserted categories data")
 
